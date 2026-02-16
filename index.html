@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pacme2</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Phaser via CDN: no install required -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+  </head>
+
+  <body>
+    <header class="topbar">
+      <h1 class="title">pacme2</h1>
+
+      <!-- HTML HUD: readable by assistive tech; JS updates spans -->
+      <div class="hud" aria-live="polite">
+        <div><span class="label">Score</span> <span id="score">0</span></div>
+        <div><span class="label">Lives</span> <span id="lives">3</span></div>
+        <div><span class="label">Status</span> <span id="status">Ready</span></div>
+      </div>
+
+      <button id="startBtn" class="startBtn" type="button">
+        Start / Restart
+      </button>
+    </header>
+
+    <main class="main">
+      <div id="game-root" class="gameRoot" role="application" aria-label="pacme2 game area"></div>
+
+      <!-- On-screen controls for mobile -->
+      <section class="controls" aria-label="On-screen controls">
+        <div class="dpad" aria-label="Direction pad">
+          <button class="dpadBtn" data-dir="up" type="button" aria-label="Move up">▲</button>
+          <div class="dpadRow">
+            <button class="dpadBtn" data-dir="left" type="button" aria-label="Move left">◀</button>
+            <button class="dpadBtn" data-dir="down" type="button" aria-label="Move down">▼</button>
+            <button class="dpadBtn" data-dir="right" type="button" aria-label="Move right">▶</button>
+          </div>
+        </div>
+
+        <p class="help">
+          Keyboard: Arrow keys or WASD. Mobile: tap the D-pad. Goal: eat all pellets.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Static web game hosted on GitHub Pages.</small>
+    </footer>
+
+    <script defer src="game.js"></script>
+  </body>
+</html>
