@@ -1,0 +1,126 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0b;
+  --panel: #161616;
+  --text: #eaeaea;
+  --muted: #bdbdbd;
+  --accent: #2b4cff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--panel);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.hud {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.hud .label {
+  color: var(--muted);
+  margin-right: 6px;
+}
+
+.startBtn {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.startBtn:focus-visible,
+.dpadBtn:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+.main {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 12px 12px 18px;
+}
+
+.gameRoot {
+  width: min(92vw, 520px);
+  /* height is determined by the Phaser canvas; keep it centered */
+  border: 2px solid #242424;
+  border-radius: 14px;
+  overflow: hidden;
+
+  /* Avoid touch scrolling on the game panel */
+  touch-action: none;
+}
+
+.controls {
+  width: min(92vw, 520px);
+  padding: 10px 12px;
+  background: var(--panel);
+  border-radius: 14px;
+}
+
+.dpad {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  touch-action: none;
+}
+
+.dpadRow {
+  display: flex;
+  gap: 10px;
+}
+
+.dpadBtn {
+  width: 56px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: #101010;
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.help {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.footer {
+  padding: 14px;
+  color: var(--muted);
+  text-align: center;
+}
